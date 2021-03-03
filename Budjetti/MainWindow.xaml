@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Budjetti"
         mc:Ignorable="d"
-        Title="Budjetti" Height="610" Width="800"
+        Title="Budjetti" Height="700" Width="800"
         WindowStyle= "None"
         ResizeMode="NoResize"
         AllowsTransparency="True"
@@ -23,13 +23,13 @@
                 <Border x:Name="Border" 
                         Grid.ColumnSpan="2"
                         CornerRadius="8"
-                        Background="#1B1725"
-                        BorderBrush="#FF97A0A5"
+                        Background="#0B2027"
+                        BorderBrush="#0B2027"
                         BorderThickness="1" />
                 <Border Grid.Column="0"
                         CornerRadius="8" 
                         Margin="1" 
-                        Background="#1B1725"
+                        Background="#0B2027"
                         BorderThickness="0,0,1,0" />
                 <Path x:Name="Arrow"
                       Grid.Column="1" 
@@ -109,10 +109,10 @@
                                       MinWidth="{TemplateBinding ActualWidth}"
                                       MaxHeight="{TemplateBinding MaxDropDownHeight}">
                                     <Border x:Name="DropDownBorder"
-                                            Background="#1B1725"
+                                            Background="#0B2027"
                                             CornerRadius="5"
                                             BorderThickness="1"
-                                            BorderBrush="#888888"/>
+                                            BorderBrush="#123440"/>
                                     <ScrollViewer Margin="4,6,4,6" SnapsToDevicePixels="True">
                                         <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
                                     </ScrollViewer>
@@ -183,6 +183,7 @@
                 <RowDefinition Height= "30"/>
                 <RowDefinition Height="50"/>
                 <RowDefinition/>
+                <RowDefinition/>
                 <RowDefinition Height="40"/>
             </Grid.RowDefinitions>
 
@@ -191,7 +192,7 @@
                 <ColumnDefinition Width="500"/>
             </Grid.ColumnDefinitions>
 
-            <Grid Background="#1B1725"
+            <Grid Background="#0B2027"
                   Grid.ColumnSpan="2"
                   Grid.Row="0">
                 <Grid.ColumnDefinitions>
@@ -219,7 +220,7 @@
                             Foreground="Black"
                             Margin="0,0,10,0">
                         <StackPanel>
-                            <Image Source="Icons/viiva.png" />
+                            <Image Height="20" Source="Icons/viiva.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </StackPanel>
                         <Button.Style>
                             <Style TargetType="Button">
@@ -229,7 +230,7 @@
 
                                 <Style.Triggers>
                                     <Trigger Property="IsMouseOver" Value="true">
-                                        <Setter Property="Background" Value="#b5a6a5"/>
+                                        <Setter Property="Background" Value="#164050"/>
                                     </Trigger>
                                 </Style.Triggers>
                             </Style>
@@ -237,8 +238,8 @@
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
-                                <Border Width="23" Height="23"
-                                        CornerRadius="13"
+                                <Border Width="27" Height="25"
+                                        CornerRadius="5"
                                         Background="{TemplateBinding Background}">
                                     <ContentPresenter VerticalAlignment="Center"
                                                       HorizontalAlignment="Center"/>
@@ -253,7 +254,7 @@
                             Foreground="Black"
                             Margin="0,0,10,0">
                         <StackPanel>
-                            <Image Source="Icons/rasti.png" />
+                            <Image Height="20" Source="Icons/rasti.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </StackPanel>
                         <Button.Style>
                             <Style TargetType="Button">
@@ -271,8 +272,8 @@
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
-                                <Border Width="23" Height="23"
-                                        CornerRadius="13"
+                                <Border Width="27" Height="25"
+                                        CornerRadius="5"
                                         Background="{TemplateBinding Background}">
                                     <ContentPresenter VerticalAlignment="Center"
                                                       HorizontalAlignment="Center"/>
@@ -297,12 +298,12 @@
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="TextElement.FontFamily" Value="Fonts/#Pontano"/>
-                                <Setter Property="Background" Value="#1B1725"/>
+                                <Setter Property="Background" Value="#0B2027"/>
                                 <Setter Property="Cursor" Value="Hand"/>
 
                                 <Style.Triggers>
                                     <Trigger Property="IsMouseOver" Value="true">
-                                        <Setter Property="Background" Value="#272920"/>
+                                        <Setter Property="Background" Value="#1B4D5F"/>
                                     </Trigger>
                                 </Style.Triggers>
                             </Style>
@@ -345,9 +346,12 @@
                 </StackPanel>
             </StackPanel>
 
-            <StackPanel Grid.Row="2" HorizontalAlignment="Left" Margin="40,0,0,0">
-                <Border CornerRadius="20,20,20,20" Background="#B0C4B1" Width="200" Height="250"
+            <StackPanel Grid.Row="2" Grid.RowSpan="2" HorizontalAlignment="Left" Margin="40,0,0,0">
+                <Border CornerRadius="20,20,20,20" Background="#70A9A1" Width="200" Height="250"
                         Margin="10,10,10,10">
+                    <Border.Effect>
+                        <DropShadowEffect Color="#ebf3f5"/>
+                    </Border.Effect>
                     <Grid Margin="0,5,0,5">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="25"/>
@@ -494,8 +498,11 @@
                         </Grid>
                     </Grid>
                 </Border>
-                <Border CornerRadius="20" Background="#DEDBD2" Width="200" Height="80"
+                <Border CornerRadius="20" Background="#47859A" Width="200" Height="80"
                         Margin="10,10,10,10">
+                    <Border.Effect>
+                        <DropShadowEffect Color="#ebf3f5"/>
+                    </Border.Effect>
                     <Grid Margin="0,10,0,5">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="97*"/>
@@ -520,8 +527,11 @@
                                FontSize="14" Grid.ColumnSpan="2" Margin="0,0.2,0,0.4"/>
                     </Grid>
                 </Border>
-                <Border CornerRadius="20" Background="#B287A3" Width="200" Height="80"
+                <Border CornerRadius="20" Background="#F6CA83" Width="200" Height="80"
                         Margin="10,10,10,10">
+                    <Border.Effect>
+                        <DropShadowEffect Color="#ebf3f5"/>
+                    </Border.Effect>
                     <Grid Margin="0,10,0,5">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="25"/>
@@ -542,11 +552,39 @@
                                FontSize="14"/>
                     </Grid>
                 </Border>
+                <Border CornerRadius="20" Background="#D1634D" Width="200" Height="80"
+                        Margin="10,10,10,10">
+                    <Border.Effect>
+                        <DropShadowEffect Color="#ebf3f5"/>
+                    </Border.Effect>
+                    <Grid Margin="0,10,0,5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row ="0" 
+                                   Text="Rahaa säästössä"
+                                   Foreground="Black"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   FontFamily="Fonts/#FugazOne"
+                                   FontSize="14"
+                                   FontWeight="Medium"/>
+                        <Label Grid.Row ="1" 
+                               Content="0 €"
+                               HorizontalContentAlignment="Center"
+                               VerticalContentAlignment="Center"
+                               FontSize="14"/>
+                    </Grid>
+                </Border>
             </StackPanel>
 
-            <Border Grid.Row="2" Grid.Column="1" BorderThickness="0" Margin="0,10,30,10"  CornerRadius="15">
+            <Border Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" BorderThickness="0" Margin="0,10,30,10"  CornerRadius="15">
+                <Border.Effect>
+                    <DropShadowEffect Color="#ebf3f5"/>
+                </Border.Effect>
                 <Grid>
-                    <Border x:Name="BDRounded" BorderThickness="0" CornerRadius="15" Background="#F2FDFF"/>
+                    <Border x:Name="BDRounded" BorderThickness="0" CornerRadius="15" Background="#47859A"/>
                     <DataGrid Name="dgMenot" 
                               BorderBrush="{x:Null}"
                               CanUserReorderColumns="False"
@@ -557,9 +595,9 @@
                               CanUserResizeRows="False"
                               ColumnWidth="150"
                               GridLinesVisibility="Vertical"
-                              Background="#cce3ed"
-                              RowBackground="#F2FDFF"
-                              AlternatingRowBackground="#cce3ed"
+                              Background="#47859A"
+                              RowBackground="#ABCED8"
+                              AlternatingRowBackground="#47859A"
                               HeadersVisibility="Column"
                               ColumnHeaderHeight="20">
                         <DataGrid.OpacityMask>
@@ -573,7 +611,7 @@
                         </DataGrid.Columns>
                         <DataGrid.Resources>
                             <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
-                                <Setter Property="Background" Value="#cce3ed" />
+                                <Setter Property="Background" Value="#47859A" />
                                 <Setter Property="FontWeight" Value="Medium" />
                                 <Setter Property="FontFamily" Value="Fonts/#FugazOne" />
                                 <Setter Property="BorderBrush" Value="Black"/>
@@ -592,22 +630,22 @@
             
            
 
-            <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1"
+            <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="1"
                         HorizontalAlignment="Right"
                         Margin="0,0,30,0">
                 <Button Content="Tallenna"
                         FontSize="13"
                         Foreground="White"
-                        Margin="10,0,10,0">
+                        Margin="10,0,10,0" Height="40" VerticalAlignment="Top">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="TextElement.FontFamily" Value="Fonts/#Pontano"/>
-                            <Setter Property="Background" Value="#1B1725"/>
+                            <Setter Property="Background" Value="#0B2027"/>
                             <Setter Property="Cursor" Value="Hand"/>
 
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="true">
-                                    <Setter Property="Background" Value="#b5a6a5"/>
+                                    <Setter Property="Background" Value="#1B4D5F"/>
                                 </Trigger>
                             </Style.Triggers>
                         </Style>
@@ -632,12 +670,12 @@
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="TextElement.FontFamily" Value="Fonts/#Pontano"/>
-                            <Setter Property="Background" Value="#1B1725"/>
+                            <Setter Property="Background" Value="#0B2027"/>
                             <Setter Property="Cursor" Value="Hand"/>
 
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="true">
-                                    <Setter Property="Background" Value="#b5a6a5"/>
+                                    <Setter Property="Background" Value="#1B4D5F"/>
                                 </Trigger>
                             </Style.Triggers>
                         </Style>
