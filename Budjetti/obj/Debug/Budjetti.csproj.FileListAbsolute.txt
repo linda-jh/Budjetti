@@ -1,0 +1,17 @@
+C:\Users\linda\Documents\Raha-asiat\budjetti\Budjetti\Budjetti\bin\Debug\Budjetti.exe.config
+C:\Users\linda\Documents\Raha-asiat\budjetti\Budjetti\Budjetti\bin\Debug\Budjetti.exe
+C:\Users\linda\Documents\Raha-asiat\budjetti\Budjetti\Budjetti\bin\Debug\Budjetti.pdb
+C:\Users\linda\Documents\Raha-asiat\budjetti\Budjetti\Budjetti\obj\Debug\Budjetti.csprojAssemblyReference.cache
+C:\Users\linda\Documents\Raha-asiat\budjetti\Budjetti\Budjetti\obj\Debug\MainWindow.g.cs
+C:\Users\linda\Documents\Raha-asiat\budjetti\Budjetti\Budjetti\obj\Debug\App.g.cs
+C:\Users\linda\Documents\Raha-asiat\budjetti\Budjetti\Budjetti\obj\Debug\Budjetti_MarkupCompile.cache
+C:\Users\linda\Documents\Raha-asiat\budjetti\Budjetti\Budjetti\obj\Debug\Budjetti_MarkupCompile.lref
+C:\Users\linda\Documents\Raha-asiat\budjetti\Budjetti\Budjetti\obj\Debug\MainWindow.baml
+C:\Users\linda\Documents\Raha-asiat\budjetti\Budjetti\Budjetti\obj\Debug\Budjetti.g.resources
+C:\Users\linda\Documents\Raha-asiat\budjetti\Budjetti\Budjetti\obj\Debug\Budjetti.Properties.Resources.resources
+C:\Users\linda\Documents\Raha-asiat\budjetti\Budjetti\Budjetti\obj\Debug\Budjetti.csproj.GenerateResource.cache
+C:\Users\linda\Documents\Raha-asiat\budjetti\Budjetti\Budjetti\obj\Debug\Budjetti.csproj.CoreCompileInputs.cache
+C:\Users\linda\Documents\Raha-asiat\budjetti\Budjetti\Budjetti\obj\Debug\Budjetti.exe
+C:\Users\linda\Documents\Raha-asiat\budjetti\Budjetti\Budjetti\obj\Debug\Budjetti.pdb
+C:\Users\linda\Documents\Raha-asiat\budjetti\Budjetti\Budjetti\obj\Debug\TallennusIkkuna.g.cs
+C:\Users\linda\Documents\Raha-asiat\budjetti\Budjetti\Budjetti\obj\Debug\TallennusIkkuna.baml
