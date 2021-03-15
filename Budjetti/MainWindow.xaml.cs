@@ -23,6 +23,10 @@ namespace Budjetti
         public MainWindow()
         {
             InitializeComponent();
+
+            //LinearGradientBrush gradientBrush = new LinearGradientBrush(Color.FromRgb(228, 231, 228), Color.FromRgb(10, 22, 71), new Point(0, 0), new Point(1, 1));
+            //borderMain.Background = gradientBrush;
+
             List<Meno> menot = new List<Meno>();
             menot.Add(new Meno() { Pv = new DateTime(2020, 7, 23), Nimi = "Semma", Summa = 10 });
             menot.Add(new Meno() { Pv = new DateTime(2020, 7, 30), Nimi = "Prisma", Summa = 58.45 });
@@ -46,6 +50,8 @@ namespace Budjetti
             System.Windows.Application.Current.Shutdown();
         }
 
+        
+
         public void MinimoiIkkuna(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
@@ -55,6 +61,17 @@ namespace Budjetti
         {
             Window1 a = new Window1();
             a.Show();
+        }
+
+        private void LisaaTulo(object sender, RoutedEventArgs e)
+        {
+            TuloIkkuna a = new TuloIkkuna();
+            a.Show();
+        }
+
+        private void MuokkaaSaastoja(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

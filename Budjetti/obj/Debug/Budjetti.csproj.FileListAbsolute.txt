@@ -15,3 +15,5 @@ C:\Users\linda\Documents\Raha-asiat\budjetti\Budjetti\Budjetti\obj\Debug\Budjett
 C:\Users\linda\Documents\Raha-asiat\budjetti\Budjetti\Budjetti\obj\Debug\Budjetti.pdb
 C:\Users\linda\Documents\Raha-asiat\budjetti\Budjetti\Budjetti\obj\Debug\TallennusIkkuna.g.cs
 C:\Users\linda\Documents\Raha-asiat\budjetti\Budjetti\Budjetti\obj\Debug\TallennusIkkuna.baml
+C:\Users\linda\Documents\Raha-asiat\budjetti\Budjetti\Budjetti\obj\Debug\TuloIkkuna.g.cs
+C:\Users\linda\Documents\Raha-asiat\budjetti\Budjetti\Budjetti\obj\Debug\TuloIkkuna.baml

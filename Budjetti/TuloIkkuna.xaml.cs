@@ -15,23 +15,20 @@ using System.Windows.Shapes;
 namespace Budjetti
 {
     /// <summary>
-    /// Interaction logic for Window1.xaml
+    /// Interaction logic for TuloIkkuna.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class TuloIkkuna : Window
     {
-        public Window1()
+        public TuloIkkuna()
         {
             InitializeComponent();
         }
 
-        public void SuljeKokoOhjelma(object sender, RoutedEventArgs e)
-        {
-            System.Windows.Application.Current.Shutdown();
-        }
-
-        public void SuljeTallennus(object sender, RoutedEventArgs e)
+        public void SuljeIkkuna(object sender, RoutedEventArgs e)
         {
             this.Close();
+
         }
+
     }
 }

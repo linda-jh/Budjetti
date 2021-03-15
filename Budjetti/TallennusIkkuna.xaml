@@ -12,10 +12,10 @@
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen">
 
-    <Border Background="#F2FDFF" 
+    <Border Background="#F9F7F7" 
             BorderBrush="Black" 
-            BorderThickness="1,1,1,1" 
-            CornerRadius="00,00,25,25">
+            BorderThickness="1" 
+            CornerRadius="10">
         <Grid Margin="0,0,0,10">
             <Grid.RowDefinitions>
                 <RowDefinition Height= "30"/>
@@ -28,54 +28,55 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Grid Background="#1B1725"
-                  Grid.ColumnSpan="2"
-                  Grid.Row="0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
+            <Border Grid.ColumnSpan="2"
+                  Grid.Row="0" CornerRadius="10,10,0,0" Background="#1F1F1E">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
 
-                <StackPanel Grid.Column="8"
+                    <StackPanel Grid.Column="8"
                             Orientation="Horizontal"
                             HorizontalAlignment="Right"
                             Margin="70,0,0,0">
 
-                    <Button Name="btExit"
-                            Click="SuljeKokoOhjelma"
+                        <Button Name="btExit"
+                            Click="SuljeTallennus"
                             FontSize="13"
                             Foreground="Black"
                             Margin="0,0,10,0">
-                        <StackPanel>
-                            <Image Source="Icons/rasti.png" />
-                        </StackPanel>
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="TextElement.FontFamily" Value="Fonts/#Pontano"/>
-                                <Setter Property="Background" Value="Transparent"/>
-                                <Setter Property="Cursor" Value="Hand"/>
+                            <StackPanel>
+                                <Image Height="20" Source="Icons/rasti.png" />
+                            </StackPanel>
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="TextElement.FontFamily" Value="Fonts/#Pontano"/>
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Setter Property="Cursor" Value="Hand"/>
 
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="true">
-                                        <Setter Property="Background" Value="#915151"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="true">
+                                            <Setter Property="Background" Value="#915151"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
 
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
                                     <Border Width="27" Height="25"
                                         CornerRadius="5"
                                         Background="{TemplateBinding Background}">
                                         <ContentPresenter VerticalAlignment="Center"
                                                       HorizontalAlignment="Center"/>
                                     </Border>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                </StackPanel>
-            </Grid>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
 
 
             <TextBlock Text="Tallennetaanko muutokset ennen sulkemista?"
@@ -99,12 +100,12 @@
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="TextElement.FontFamily" Value="Fonts/#Pontano"/>
-                        <Setter Property="Background" Value="#1B1725"/>
+                        <Setter Property="Background" Value="#1F1F1E"/>
                         <Setter Property="Cursor" Value="Hand"/>
 
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Background" Value="#915151"/>
+                                <Setter Property="Background" Value="#343432"/>
                             </Trigger>
                         </Style.Triggers>
                     </Style>
@@ -133,12 +134,12 @@
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="TextElement.FontFamily" Value="Fonts/#Pontano"/>
-                        <Setter Property="Background" Value="#1B1725"/>
+                        <Setter Property="Background" Value="#1F1F1E"/>
                         <Setter Property="Cursor" Value="Hand"/>
 
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Background" Value="#915151"/>
+                                <Setter Property="Background" Value="#343432"/>
                             </Trigger>
                         </Style.Triggers>
                     </Style>

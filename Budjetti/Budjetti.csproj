@@ -59,6 +59,9 @@
     <Compile Include="TallennusIkkuna.xaml.cs">
       <DependentUpon>TallennusIkkuna.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TuloIkkuna.xaml.cs">
+      <DependentUpon>TuloIkkuna.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -72,6 +75,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="TallennusIkkuna.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TuloIkkuna.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -94,8 +101,16 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Resource Include="Fonts\Pontano.ttf" />
-    <Resource Include="Fonts\FugazOne.ttf" />
+    <Resource Include="Fontit\Dosis.ttf" />
+    <Resource Include="Fontit\Blinker-Black.ttf" />
+    <Resource Include="Fontit\Blinker-Bold.ttf" />
+    <Resource Include="Fontit\Blinker-ExtraBold.ttf" />
+    <Resource Include="Fontit\Blinker-ExtraLight.ttf" />
+    <Resource Include="Fontit\Blinker-Light.ttf" />
+    <Resource Include="Fontit\Blinker-Regular.ttf" />
+    <Resource Include="Fontit\Blinker-SemiBold.ttf" />
+    <Resource Include="Fontit\Blinker-Thin.ttf" />
+    <Resource Include="Fontit\Manrope.ttf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

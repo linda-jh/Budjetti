@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Budjetti"
         mc:Ignorable="d"
-        Title="Budjetti" Height="700" Width="800"
+        Title="Budjetti" Height="550" Width="1000"
         WindowStyle= "None"
         ResizeMode="NoResize"
         AllowsTransparency="True"
         Background="Transparent"
         WindowStartupLocation="CenterScreen">
     <Window.Resources>
-        
+
 
         <ControlTemplate x:Key="ComboBoxToggleButton" TargetType="{x:Type ToggleButton}">
             <Grid>
@@ -23,13 +23,13 @@
                 <Border x:Name="Border" 
                         Grid.ColumnSpan="2"
                         CornerRadius="8"
-                        Background="#0B2027"
-                        BorderBrush="#0B2027"
+                        Background="#1F1F1E"
+                        BorderBrush="#1F1F1E"
                         BorderThickness="1" />
                 <Border Grid.Column="0"
                         CornerRadius="8" 
                         Margin="1" 
-                        Background="#0B2027"
+                        Background="#1F1F1E"
                         BorderThickness="0,0,1,0" />
                 <Path x:Name="Arrow"
                       Grid.Column="1" 
@@ -39,20 +39,21 @@
                       Data="M0,0 L0,2 L4,6 L8,2 L8,0 L4,4 z"
                 />
             </Grid>
-            <!--<ControlTemplate.Triggers>
+            <ControlTemplate.Triggers>
             <Trigger Property="ToggleButton.IsMouseOver" Value="true">
-                <Setter TargetName="Border" Property="Background" Value="#808080" />
+                <!--<Setter TargetName="Border" Property="Background" Value="#1F1F1E" />-->
+                <Setter Property="Cursor" Value="Hand"/>
             </Trigger>
-            <Trigger Property="ToggleButton.IsChecked" Value="true">
-                <Setter TargetName="Border" Property="Background" Value="#E0E0E0" />
+            <!--<Trigger Property="ToggleButton.IsChecked" Value="true">
+                    <Setter TargetName="Border" Property="Background" Value="#1F1F1E" />
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
                 <Setter TargetName="Border" Property="Background" Value="#EEEEEE" />
                 <Setter TargetName="Border" Property="BorderBrush" Value="#AAAAAA" />
                 <Setter Property="Foreground" Value="#888888"/>
-                <Setter TargetName="Arrow" Property="Fill" Value="#888888" />
-            </Trigger>
-        </ControlTemplate.Triggers>-->
+                <Setter TargetName="Arrow" Property="Fill" Value="#1F1F1E" />
+            </Trigger>-->
+        </ControlTemplate.Triggers>
         </ControlTemplate>
 
         <ControlTemplate x:Key="ComboBoxTextBox" TargetType="{x:Type TextBox}">
@@ -93,8 +94,8 @@
                                      VerticalAlignment="Center"
                                      Margin="3,3,23,3"
                                      Focusable="True"
-                                     Background="#FF3F3F3F"
-                                     Foreground="Green"
+                                     Background="#1F1F1E"
+                                     Foreground="White"
                                      Visibility="Hidden"
                                      IsReadOnly="{TemplateBinding IsReadOnly}"/>
                             <Popup Name="Popup"
@@ -109,10 +110,10 @@
                                       MinWidth="{TemplateBinding ActualWidth}"
                                       MaxHeight="{TemplateBinding MaxDropDownHeight}">
                                     <Border x:Name="DropDownBorder"
-                                            Background="#0B2027"
+                                            Background="#1F1F1E"
                                             CornerRadius="5"
                                             BorderThickness="1"
-                                            BorderBrush="#123440"/>
+                                            BorderBrush="#1F1F1E"/>
                                     <ScrollViewer Margin="4,6,4,6" SnapsToDevicePixels="True">
                                         <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
                                     </ScrollViewer>
@@ -130,7 +131,7 @@
                                 <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
                             </Trigger>
                             <Trigger SourceName="Popup" Property="Popup.AllowsTransparency" Value="true">
-                                <Setter TargetName="DropDownBorder" Property="CornerRadius" Value="8"/>
+                                <Setter TargetName="DropDownBorder" Property="CornerRadius" Value="7"/>
                                 <Setter TargetName="DropDownBorder" Property="Margin" Value="0,2,0,0"/>
                             </Trigger>
                             <Trigger Property="IsEditable"  Value="true">
@@ -162,7 +163,8 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsHighlighted" Value="true">
-                                <Setter TargetName="Border" Property="Background" Value="#1F2421"/>
+                                <Setter TargetName="Border" Property="Background" Value="#535350"/>
+                                <Setter Property="Cursor" Value="Hand"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
                                 <Setter Property="Foreground" Value="#888888"/>
@@ -173,11 +175,12 @@
             </Setter>
         </Style>
     </Window.Resources>
-
-    <Border Background="#F2FDFF" 
+    <!--#F2FDFF-->
+    <Border Name="borderMain" 
+            Background="#F9F7F7" 
             BorderBrush="Black" 
             BorderThickness="1,1,1,1" 
-            CornerRadius="00,00,25,25">
+            CornerRadius="10">
         <Grid Margin="0,0,0,10">
             <Grid.RowDefinitions>
                 <RowDefinition Height= "30"/>
@@ -188,13 +191,14 @@
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="250"/>
                 <ColumnDefinition Width="500"/>
+                <ColumnDefinition Width="250"/>
             </Grid.ColumnDefinitions>
 
-            <Grid Background="#0B2027"
-                  Grid.ColumnSpan="2"
-                  Grid.Row="0">
+            <Border Grid.ColumnSpan="3"
+                  Grid.Row="0" CornerRadius="10,10,0,0" Background="#1F1F1F">
+            <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
@@ -202,15 +206,15 @@
 
                 <TextBlock Text="BUDJETTI"
                            Grid.ColumnSpan="2"
-                           FontSize="15"
+                           FontSize="18"
                            Foreground="White"
                            Grid.Column="0"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"
-                           FontFamily="Fonts/#Pontano"
+                           FontFamily="Fontit/#Manrope"
                            FontWeight="Medium"/>
 
-                <StackPanel Grid.Column="8"
+                <StackPanel Grid.Column="1"
                             Orientation="Horizontal"
                             HorizontalAlignment="Right"
                             Margin="70,0,0,0">
@@ -283,53 +287,24 @@
                     </Button>
                 </StackPanel>
             </Grid>
+            </Border>
 
             <StackPanel Grid.Row="1"
                         Grid.Column="1"
                         HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
                         Margin="0,0,30,0">
                 <StackPanel Orientation="Horizontal"
                             Margin="10,0,0,0">
+                    
 
-                    <Button Content="Lisää vuosi"
-                            FontSize="13"
-                            Foreground="White"
-                            Margin="0,10,0,0">
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="TextElement.FontFamily" Value="Fonts/#Pontano"/>
-                                <Setter Property="Background" Value="#0B2027"/>
-                                <Setter Property="Cursor" Value="Hand"/>
-
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="true">
-                                        <Setter Property="Background" Value="#1B4D5F"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
-
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border Width="80" Height="27"
-                                        CornerRadius="8"
-                                        BorderThickness="1"
-                                        BorderBrush="#FF97A0A5"
-                                        Background="{TemplateBinding Background}">
-                                    <ContentPresenter VerticalAlignment="Center"
-                                                      HorizontalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-
-                    <ComboBox Margin="10,10,0,0"
-                              Height="27" Width="55">
+                    <ComboBox Margin="5,0,5,0" Height="27" Width="55"
+                              FontFamily="Fontit/#Manrope">
                         <ComboBoxItem IsSelected="True">2020</ComboBoxItem>
                         <ComboBoxItem>2019</ComboBoxItem>
                     </ComboBox>
-                    <ComboBox Margin="10,10,0,0"
-                              Height="27" Width="85">
+                    <ComboBox Margin="5,0,150,0" Height="27" Width="85"
+                              FontFamily="Fontit/#Manrope">
                         <ComboBoxItem IsSelected="True">Tammikuu</ComboBoxItem>
                         <ComboBoxItem>Helmikuu</ComboBoxItem>
                         <ComboBoxItem>Maaliskuu</ComboBoxItem>
@@ -343,29 +318,112 @@
                         <ComboBoxItem>Marraskuu</ComboBoxItem>
                         <ComboBoxItem>Joulukuu</ComboBoxItem>
                     </ComboBox>
+
+                    <Button Content="Lisää vuosi"
+                            FontSize="12"
+                            Foreground="White"
+                            FontFamily="Fontit/#Manrope"
+                            Margin="5,0,5,0"
+                            HorizontalContentAlignment="Center"
+                            VerticalContentAlignment="Center">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="TextElement.FontFamily" Value="Fonts/#Pontano"/>
+                                <Setter Property="Background" Value="#1F1F1E"/>
+                                <Setter Property="Cursor" Value="Hand"/>
+
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="true">
+                                        <Setter Property="Background" Value="#343432"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="80" Height="27"
+                                        CornerRadius="7"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <TextBox Margin="5, 0, 150, 0"
+                             Height="27"
+                             Width="50"
+                             HorizontalAlignment="Left"
+                             VerticalAlignment="Center"
+                             HorizontalContentAlignment="Center"
+                             VerticalContentAlignment="Center">
+                        <TextBox.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
                 </StackPanel>
             </StackPanel>
 
-            <StackPanel Grid.Row="2" Grid.RowSpan="2" HorizontalAlignment="Left" Margin="40,0,0,0">
-                <Border CornerRadius="20,20,20,20" Background="#70A9A1" Width="200" Height="250"
-                        Margin="10,10,10,10">
+            <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button Content="Lisää tulo"
+                        Click="LisaaTulo"
+                        FontSize="12"
+                        Foreground="White"
+                        Margin="0,0,110,0"
+                        FontFamily="Fontit/#Manrope"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="TextElement.FontFamily" Value="Fonts/#Pontano"/>
+                            <Setter Property="Background" Value="#1F1F1E"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="true">
+                                    <Setter Property="Background" Value="#343432"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="80" Height="27"
+                                        CornerRadius="7"
+                                        Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" Grid.RowSpan="2" HorizontalAlignment="Center">
+                <Border CornerRadius="20,20,20,20"
+                        Background="#1F1F1E" Width="200" Height="250"
+                        Margin="10,10,10,15">
                     <Border.Effect>
-                        <DropShadowEffect Color="#ebf3f5"/>
+                        <DropShadowEffect Color="#d9d9d9"/>
                     </Border.Effect>
-                    <Grid Margin="0,5,0,5">
+                    <Grid Margin="0,5,0,5" >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="25"/>
                             <RowDefinition/>
                         </Grid.RowDefinitions>
                         <TextBlock Grid.Row ="0" 
-                                   Text="Kuukauden tulot"
-                                   Foreground="Black"
+                                   Text="Tulot"
+                                   Foreground="White"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
-                                   FontFamily="Fonts/#FugazOne"
-                                   FontWeight="Medium"
+                                   FontFamily="Fontit/#Manrope"
+                                   FontWeight="Bold"
                                    FontSize="14"/>
-                        <Grid Grid.Row="1" Margin="0,0,0,10">
+                        <Grid Grid.Row="1" Margin="7,5,7,10">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
@@ -383,125 +441,106 @@
                                    Grid.Column="0" 
                                    Content="Asumistuki"
                                    VerticalAlignment="Center"
-                                   HorizontalAlignment="Center"
-                                   FontSize="12"/>
+                                   HorizontalAlignment="Right"
+                                   FontSize="13"
+                                   FontFamily="Fontit/#Manrope"
+                                   Foreground="White"/>
                             <Label Grid.Row="1" 
                                    Grid.Column="0" 
                                    Content="Opintotuki"
                                    VerticalAlignment="Center"
-                                   HorizontalAlignment="Center"
-                                   FontSize="12"/>
+                                   HorizontalAlignment="Right"
+                                   FontSize="13"
+                                   FontFamily="Fontit/#Manrope"
+                                   Foreground="White"/>
                             <Label Grid.Row="2" 
                                    Grid.Column="0" 
                                    Content="Opintolaina"
                                    VerticalAlignment="Center"
-                                   HorizontalAlignment="Center"
-                                   FontSize="12"/>
+                                   HorizontalAlignment="Right"
+                                   FontSize="13"
+                                   FontFamily="Fontit/#Manrope"
+                                   Foreground="White"/>
                             <Label Grid.Row="3" 
                                    Grid.Column="0" 
                                    Content="Palkka"
                                    VerticalAlignment="Center"
-                                   HorizontalAlignment="Center"
-                                   FontSize="12"/>
+                                   HorizontalAlignment="Right"
+                                   FontSize="13"
+                                   FontFamily="Fontit/#Manrope"
+                                   Foreground="White"/>
                             <Label Grid.Row="4" 
                                    Grid.Column="0" 
                                    Content="Muut"
                                    VerticalAlignment="Center"
-                                   HorizontalAlignment="Center"
-                                   FontSize="12"/>
+                                   HorizontalAlignment="Right"
+                                   FontSize="13"
+                                   FontFamily="Fontit/#Manrope"
+                                   Foreground="White"/>
                             <Label Grid.Row="5" 
                                    Grid.Column="0" 
                                    Content="Yhteensä :"
                                    VerticalAlignment="Center"
-                                   HorizontalAlignment="Center"
+                                   HorizontalAlignment="Right"
                                    FontWeight="Medium"
-                                   FontSize="12"/>
+                                   FontSize="13"
+                                   FontFamily="Fontit/#Manrope"
+                                   Foreground="White"/>
                             <Label Grid.Row="5" 
                                    Grid.Column="1" 
-                                   Content="0 €"
+                                   Content="1 317,26 €"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
                                    FontWeight="Medium"
-                                   FontSize="12"/>
-                            <TextBox Grid.Row="1" 
-                                     Grid.Column="1" 
-                                     Margin="5,5,15,5"
-                                     Height="25"
-                                     VerticalContentAlignment="Center"
-                                     HorizontalContentAlignment="Center">
-                                <TextBox.Resources>
-                                    <Style TargetType="{x:Type Border}">
-                                        <Setter Property="CornerRadius" Value="5"/>
-                                    </Style>
-                                </TextBox.Resources>
-                            </TextBox>
-                            <TextBox Grid.Row="0" 
-                                     Grid.Column="1" 
-                                     Margin="5,5,15,5"
-                                     Height="25"
-                                     VerticalContentAlignment="Center"
-                                     HorizontalContentAlignment="Center">
-                                <TextBox.Resources>
-                                    <Style TargetType="{x:Type Border}">
-                                        <Setter Property="CornerRadius" Value="5"/>
-                                    </Style>
-                                </TextBox.Resources>
-                            </TextBox>
-                            <TextBox Grid.Row="1" 
-                                     Grid.Column="1" 
-                                     Margin="5,5,15,5"
-                                     Height="25"
-                                     VerticalContentAlignment="Center"
-                                     HorizontalContentAlignment="Center">
-                                <TextBox.Resources>
-                                    <Style TargetType="{x:Type Border}">
-                                        <Setter Property="CornerRadius" Value="5"/>
-                                    </Style>
-                                </TextBox.Resources>
-                            </TextBox>
-                            <TextBox Grid.Row="2" 
-                                     Grid.Column="1" 
-                                     Margin="5,5,15,5"
-                                     Height="25"
-                                     VerticalContentAlignment="Center"
-                                     HorizontalContentAlignment="Center">
-                                <TextBox.Resources>
-                                    <Style TargetType="{x:Type Border}">
-                                        <Setter Property="CornerRadius" Value="5"/>
-                                    </Style>
-                                </TextBox.Resources>
-                            </TextBox>
-                            <TextBox Grid.Row="3" 
-                                     Grid.Column="1" 
-                                     Margin="5,5,15,5"
-                                     Height="25"
-                                     VerticalContentAlignment="Center"
-                                     HorizontalContentAlignment="Center">
-                                <TextBox.Resources>
-                                    <Style TargetType="{x:Type Border}">
-                                        <Setter Property="CornerRadius" Value="5"/>
-                                    </Style>
-                                </TextBox.Resources>
-                            </TextBox>
-                            <TextBox Grid.Row="4" 
-                                     Grid.Column="1" 
-                                     Margin="5,5,15,5"
-                                     Height="25"
-                                     VerticalContentAlignment="Center"
-                                     HorizontalContentAlignment="Center">
-                                <TextBox.Resources>
-                                    <Style TargetType="{x:Type Border}">
-                                        <Setter Property="CornerRadius" Value="5"/>
-                                    </Style>
-                                </TextBox.Resources>
-                            </TextBox>
+                                   FontSize="13"
+                                   FontFamily="Fontit/#Manrope"
+                                   Foreground="White"/>
+                            <Label Grid.Row="0" 
+                                   Content="319,20 €"
+                                   Grid.Column="1"
+                                   Height="25"
+                                   VerticalContentAlignment="Center"
+                                   HorizontalContentAlignment="Center"
+                                   FontSize="13"
+                                   Foreground="White"/>
+                            <Label Grid.Row="1" 
+                                   Content="252,76 €"
+                                   Grid.Column="1"
+                                   Height="25"
+                                   VerticalContentAlignment="Center"
+                                   HorizontalContentAlignment="Center"
+                                   FontSize="13"
+                                   Foreground="White"/>
+                            <Label Grid.Row="2" 
+                                   Content="650 €"
+                                   Grid.Column="1"
+                                   Height="25"
+                                   VerticalContentAlignment="Center"
+                                   HorizontalContentAlignment="Center"
+                                   FontSize="13"
+                                   Foreground="White"/>
+                            <Label Grid.Row="3" 
+                                   Content="75,30 €"
+                                   Grid.Column="1"
+                                   VerticalContentAlignment="Center"
+                                   HorizontalContentAlignment="Center"
+                                   FontSize="13"
+                                   Foreground="White"/>
+                            <Label Grid.Row="4" 
+                                   Content="20 €"
+                                   Grid.Column="1"
+                                   Height="25"
+                                   VerticalContentAlignment="Center"
+                                   HorizontalContentAlignment="Center"
+                                   FontSize="13"
+                                   Foreground="White"/>
                         </Grid>
                     </Grid>
                 </Border>
-                <Border CornerRadius="20" Background="#47859A" Width="200" Height="80"
-                        Margin="10,10,10,10">
+                <Border CornerRadius="20" Background="#FFFFFF" Width="200" Height="80"
+                        Margin="10,15,10,15">
                     <Border.Effect>
-                        <DropShadowEffect Color="#ebf3f5"/>
+                        <DropShadowEffect Color="#d9d9d9"/>
                     </Border.Effect>
                     <Grid Margin="0,10,0,5">
                         <Grid.ColumnDefinitions>
@@ -513,78 +552,74 @@
                             <RowDefinition/>
                         </Grid.RowDefinitions>
                         <TextBlock Grid.Row ="0" 
-                                   Text="Kuukauden menot yhteensä"
+                                   Text="Menot yhteensä"
                                    Foreground="Black"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
-                                   FontFamily="Fonts/#FugazOne"
+                                   FontFamily="Fontit/#Manrope"
                                    FontSize="14"
-                                   FontWeight="Medium" Margin="11,4,5.1,3.8"/>
+                                   FontWeight="Bold"/>
                         <Label Grid.Row ="1" 
                                Content="0 €"
                                HorizontalContentAlignment="Center"
                                VerticalContentAlignment="Center"
-                               FontSize="14" Grid.ColumnSpan="2" Margin="0,0.2,0,0.4"/>
+                               FontSize="14" Grid.ColumnSpan="2" Margin="0,0.2,0,0.4"
+                               FontFamily="Fontit/#Manrope"
+                               FontWeight="Medium"
+                               Foreground="Black"/>
                     </Grid>
                 </Border>
-                <Border CornerRadius="20" Background="#F6CA83" Width="200" Height="80"
-                        Margin="10,10,10,10">
-                    <Border.Effect>
-                        <DropShadowEffect Color="#ebf3f5"/>
-                    </Border.Effect>
-                    <Grid Margin="0,10,0,5">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="25"/>
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
-                        <TextBlock Grid.Row ="0" 
-                                   Text="Rahaa käytettävissä"
-                                   Foreground="Black"
-                                   VerticalAlignment="Center"
-                                   HorizontalAlignment="Center"
-                                   FontFamily="Fonts/#FugazOne"
-                                   FontSize="14"
-                                   FontWeight="Medium"/>
-                        <Label Grid.Row ="1" 
-                               Content="0 €"
-                               HorizontalContentAlignment="Center"
-                               VerticalContentAlignment="Center"
-                               FontSize="14"/>
-                    </Grid>
-                </Border>
-                <Border CornerRadius="20" Background="#D1634D" Width="200" Height="80"
-                        Margin="10,10,10,10">
-                    <Border.Effect>
-                        <DropShadowEffect Color="#ebf3f5"/>
-                    </Border.Effect>
-                    <Grid Margin="0,10,0,5">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="25"/>
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
-                        <TextBlock Grid.Row ="0" 
-                                   Text="Rahaa säästössä"
-                                   Foreground="Black"
-                                   VerticalAlignment="Center"
-                                   HorizontalAlignment="Center"
-                                   FontFamily="Fonts/#FugazOne"
-                                   FontSize="14"
-                                   FontWeight="Medium"/>
-                        <Label Grid.Row ="1" 
-                               Content="0 €"
-                               HorizontalContentAlignment="Center"
-                               VerticalContentAlignment="Center"
-                               FontSize="14"/>
-                    </Grid>
-                </Border>
+                
+                
             </StackPanel>
 
-            <Border Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" BorderThickness="0" Margin="0,10,30,10"  CornerRadius="15">
+            <Button Content="Muokkaa säästöjä"
+                    Grid.Column="0"
+                    Grid.Row="4"
+                    Click="MuokkaaSaastoja"
+                    FontSize="12"
+                    Foreground="White"
+                    Margin="0,0,60,0"
+                    FontFamily="Fontit/#Manrope" 
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily" Value="Fonts/#Pontano"/>
+                        <Setter Property="Background" Value="#1F1F1E"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" Value="#343432"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="130" Height="27"
+                                CornerRadius="7"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Border Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" 
+                    BorderThickness="0" 
+                    Margin="0,10,0,10"  
+                    CornerRadius="15" 
+                    Height="390" 
+                    VerticalAlignment="Top">                
                 <Border.Effect>
-                    <DropShadowEffect Color="#ebf3f5"/>
+                    <DropShadowEffect Color="#d9d9d9"/>
                 </Border.Effect>
                 <Grid>
-                    <Border x:Name="BDRounded" BorderThickness="0" CornerRadius="15" Background="#47859A"/>
+                    <Border x:Name="BDRounded" BorderThickness="0" CornerRadius="15" Background="#FFFFFF" Height="390"/>
                     <DataGrid Name="dgMenot" 
                               BorderBrush="{x:Null}"
                               CanUserReorderColumns="False"
@@ -595,25 +630,28 @@
                               CanUserResizeRows="False"
                               ColumnWidth="150"
                               GridLinesVisibility="Vertical"
-                              Background="#47859A"
-                              RowBackground="#ABCED8"
-                              AlternatingRowBackground="#47859A"
+                              Background="#FFFFFF"
+                              RowBackground="#EBEBEB"
+                              AlternatingRowBackground="#FFFFFF"
                               HeadersVisibility="Column"
-                              ColumnHeaderHeight="20">
+                              ColumnHeaderHeight="20"
+                              FontFamily="Fontit/#Manrope"
+                              Height="390">
                         <DataGrid.OpacityMask>
                             <VisualBrush Visual="{Binding ElementName=BDRounded}"/>
                         </DataGrid.OpacityMask>
 
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Päivämäärä" Width="100" CanUserSort="True" Binding="{Binding Pv}"/>
+                            <DataGridTextColumn Header="Päivämäärä" Width="120" CanUserSort="True" Binding="{Binding Pv}"/>
                             <DataGridTextColumn Header="Meno" Width="300" CanUserSort="True" Binding="{Binding Nimi}"/>
-                            <DataGridTextColumn Header="Summa" Width="70" CanUserSort="True" Binding="{Binding Summa}"/>
+                            <DataGridTextColumn Header="Summa" Width="80" CanUserSort="True" Binding="{Binding Summa}"/>
                         </DataGrid.Columns>
                         <DataGrid.Resources>
                             <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
-                                <Setter Property="Background" Value="#47859A" />
+                                <Setter Property="Background" Value="#FFFFFF" />
+                                <Setter Property="FontFamily" Value="Fontit/#Manrope" />
                                 <Setter Property="FontWeight" Value="Medium" />
-                                <Setter Property="FontFamily" Value="Fonts/#FugazOne" />
+                                <Setter Property="FontSize" Value="14" />
                                 <Setter Property="BorderBrush" Value="Black"/>
                                 <Setter Property="BorderThickness" Value="0,0,1,1"/>
                                 <Setter Property="HorizontalContentAlignment" Value="Center"/>
@@ -627,25 +665,93 @@
                     </DataGrid>
                 </Grid>
             </Border>
-            
-           
 
-            <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="1"
+            <StackPanel Grid.Row="2" Grid.Column="2">
+                <Border CornerRadius="20" Background="#1F1F1E" Width="200" Height="80"
+                        Margin="10,10,10,15">
+                    <Border.Effect>
+                        <DropShadowEffect Color="#d9d9d9"/>
+                    </Border.Effect>
+                    <Grid Margin="0,10,0,5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row ="0" 
+                                   Text="Rahaa käytettävissä"
+                                   Foreground="White"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   FontFamily="Fontit/#Manrope"
+                                   FontSize="14"
+                                   FontWeight="Bold"/>
+                        <Label Grid.Row ="1" 
+                               Content="0 €"
+                               HorizontalContentAlignment="Center"
+                               VerticalContentAlignment="Center"
+                               FontSize="14"
+                               FontFamily="Fontit/#Manrope"
+                               FontWeight="Medium"
+                               Foreground="White"/>
+                    </Grid>
+                </Border>
+
+                <Border CornerRadius="20" Background="#1F1F1E" Width="200" Height="80"
+                        Margin="10,15,10,15">
+                    <Border.Effect>
+                        <DropShadowEffect Color="#d9d9d9"/>
+                    </Border.Effect>
+                    <Grid Margin="0,10,0,5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row ="0" 
+                                   Text="Säästöt"
+                                   Foreground="White"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   FontFamily="Fontit/#Manrope"
+                                   FontSize="14"
+                                   FontWeight="Bold"/>
+                        <Label Grid.Row ="1" 
+                               Content="0 €"
+                               HorizontalContentAlignment="Center"
+                               VerticalContentAlignment="Center"
+                               FontSize="14"
+                               FontFamily="Fontit/#Manrope"
+                               FontWeight="Medium"
+                               Foreground="White"/>
+                    </Grid>
+                </Border>
+            </StackPanel>
+            
+
+
+            <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"
                         HorizontalAlignment="Right"
                         Margin="0,0,30,0">
+                <Label Content="Tallennettu!" 
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Center" 
+                       Margin="5" 
+                       FontFamily="Fontit/#Manrope"
+                       FontSize="14"
+                       FontWeight="Light"/>
                 <Button Content="Tallenna"
-                        FontSize="13"
+                        FontSize="12"
                         Foreground="White"
-                        Margin="10,0,10,0" Height="40" VerticalAlignment="Top">
+                        Margin="10,0,10,0" Height="40" VerticalAlignment="Top"
+                        FontFamily="Fontit/#Manrope">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="TextElement.FontFamily" Value="Fonts/#Pontano"/>
-                            <Setter Property="Background" Value="#0B2027"/>
+                            <Setter Property="Background" Value="#1F1F1E"/>
                             <Setter Property="Cursor" Value="Hand"/>
 
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="true">
-                                    <Setter Property="Background" Value="#1B4D5F"/>
+                                    <Setter Property="Background" Value="#343432"/>
                                 </Trigger>
                             </Style.Triggers>
                         </Style>
@@ -654,7 +760,7 @@
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Border Width="70" Height="27"
-                                        CornerRadius="8"
+                                        CornerRadius="7"
                                         Background="{TemplateBinding Background}">
                                 <ContentPresenter VerticalAlignment="Center"
                                                       HorizontalAlignment="Center"/>
@@ -664,18 +770,19 @@
                 </Button>
                 <Button Content="Sulje"
                         Click="SuljeIkkuna"
-                        FontSize="13"
+                        FontSize="12"
                         Foreground="White"
-                        Margin="10,0,0,0">
+                        Margin="10,0,0,0"
+                        FontFamily="Fontit/#Manrope">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="TextElement.FontFamily" Value="Fonts/#Pontano"/>
-                            <Setter Property="Background" Value="#0B2027"/>
+                            <Setter Property="Background" Value="#1F1F1E"/>
                             <Setter Property="Cursor" Value="Hand"/>
 
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="true">
-                                    <Setter Property="Background" Value="#1B4D5F"/>
+                                    <Setter Property="Background" Value="#343432"/>
                                 </Trigger>
                             </Style.Triggers>
                         </Style>
@@ -684,7 +791,7 @@
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Border Width="70" Height="27"
-                                        CornerRadius="8"
+                                        CornerRadius="7"
                                         Background="{TemplateBinding Background}">
                                 <ContentPresenter VerticalAlignment="Center"
                                                       HorizontalAlignment="Center"/>
