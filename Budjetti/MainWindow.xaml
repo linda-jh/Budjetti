@@ -234,7 +234,7 @@
 
                                 <Style.Triggers>
                                     <Trigger Property="IsMouseOver" Value="true">
-                                        <Setter Property="Background" Value="#164050"/>
+                                            <Setter Property="Background" Value="#333333"/>
                                     </Trigger>
                                 </Style.Triggers>
                             </Style>
@@ -368,11 +368,11 @@
             </StackPanel>
 
             <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Button Content="Lisää tulo"
-                        Click="LisaaTulo"
+                <Button Content="Muokkaa tuloja"
+                        Click="MuokkaaTuloja"
                         FontSize="12"
                         Foreground="White"
-                        Margin="0,0,110,0"
+                        Margin="0,0,100,0"
                         FontFamily="Fontit/#Manrope"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center">
@@ -392,7 +392,7 @@
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
-                            <Border Width="80" Height="27"
+                            <Border Width="90" Height="27"
                                         CornerRadius="7"
                                         Background="{TemplateBinding Background}">
                                 <ContentPresenter VerticalAlignment="Center"
@@ -486,7 +486,7 @@
                                    FontSize="13"
                                    FontFamily="Fontit/#Manrope"
                                    Foreground="White"/>
-                            <Label Grid.Row="5" 
+                            <Label Name="tulotYht" Grid.Row="5" 
                                    Grid.Column="1" 
                                    Content="1 317,26 €"
                                    VerticalAlignment="Center"
@@ -495,7 +495,8 @@
                                    FontSize="13"
                                    FontFamily="Fontit/#Manrope"
                                    Foreground="White"/>
-                            <Label Grid.Row="0" 
+                            <Label Name="asumistukiLb" 
+                                   Grid.Row="0" 
                                    Content="319,20 €"
                                    Grid.Column="1"
                                    Height="25"
@@ -503,7 +504,8 @@
                                    HorizontalContentAlignment="Center"
                                    FontSize="13"
                                    Foreground="White"/>
-                            <Label Grid.Row="1" 
+                            <Label Name="opintotukiLb" 
+                                   Grid.Row="1" 
                                    Content="252,76 €"
                                    Grid.Column="1"
                                    Height="25"
@@ -511,7 +513,8 @@
                                    HorizontalContentAlignment="Center"
                                    FontSize="13"
                                    Foreground="White"/>
-                            <Label Grid.Row="2" 
+                            <Label Name="opintolainaLb" 
+                                   Grid.Row="2" 
                                    Content="650 €"
                                    Grid.Column="1"
                                    Height="25"
@@ -519,14 +522,16 @@
                                    HorizontalContentAlignment="Center"
                                    FontSize="13"
                                    Foreground="White"/>
-                            <Label Grid.Row="3" 
+                            <Label Name="palkkaLb" 
+                                   Grid.Row="3" 
                                    Content="75,30 €"
                                    Grid.Column="1"
                                    VerticalContentAlignment="Center"
                                    HorizontalContentAlignment="Center"
                                    FontSize="13"
                                    Foreground="White"/>
-                            <Label Grid.Row="4" 
+                            <Label Name="muutLb" 
+                                   Grid.Row="4" 
                                    Content="20 €"
                                    Grid.Column="1"
                                    Height="25"
@@ -667,7 +672,7 @@
             </Border>
 
             <StackPanel Grid.Row="2" Grid.Column="2">
-                <Border CornerRadius="20" Background="#1F1F1E" Width="200" Height="80"
+                <Border CornerRadius="20" Background="#F5CB5C" Width="200" Height="80"
                         Margin="10,10,10,15">
                     <Border.Effect>
                         <DropShadowEffect Color="#d9d9d9"/>
@@ -679,7 +684,7 @@
                         </Grid.RowDefinitions>
                         <TextBlock Grid.Row ="0" 
                                    Text="Rahaa käytettävissä"
-                                   Foreground="White"
+                                   Foreground="Black"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
                                    FontFamily="Fontit/#Manrope"
@@ -692,7 +697,7 @@
                                FontSize="14"
                                FontFamily="Fontit/#Manrope"
                                FontWeight="Medium"
-                               Foreground="White"/>
+                               Foreground="Black"/>
                     </Grid>
                 </Border>
 

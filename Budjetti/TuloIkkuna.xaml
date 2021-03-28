@@ -150,7 +150,8 @@
                                    FontFamily="Fontit/#Manrope"
                                    Foreground="White"/>
                             
-                            <TextBox Grid.Row="0" 
+                            <TextBox Name="asumistukiTxt" 
+                                     Grid.Row="0" 
                                      Grid.Column="2" 
                                      Margin="5,5,15,5"
                                      Height="25"
@@ -163,7 +164,8 @@
                                     </Style>
                                 </TextBox.Resources>
                             </TextBox>
-                            <TextBox Grid.Row="1" 
+                            <TextBox Name="opintotukiTxt" 
+                                     Grid.Row="1" 
                                      Grid.Column="2" 
                                      Margin="5,5,15,5"
                                      Height="25"
@@ -176,7 +178,8 @@
                                     </Style>
                                 </TextBox.Resources>
                             </TextBox>
-                            <TextBox Grid.Row="2" 
+                            <TextBox Name="opintolainaTxt" 
+                                     Grid.Row="2" 
                                      Grid.Column="2" 
                                      Margin="5,5,15,5"
                                      Height="25"
@@ -189,7 +192,8 @@
                                     </Style>
                                 </TextBox.Resources>
                             </TextBox>
-                            <TextBox Grid.Row="3" 
+                            <TextBox Name="palkkaTxt" 
+                                     Grid.Row="3" 
                                      Grid.Column="2" 
                                      Margin="5,5,15,5"
                                      Height="25"
@@ -202,7 +206,8 @@
                                     </Style>
                                 </TextBox.Resources>
                             </TextBox>
-                            <TextBox Grid.Row="4" 
+                            <TextBox Name="muutTxt" 
+                                     Grid.Row="4" 
                                      Grid.Column="2" 
                                      Margin="5,5,15,5"
                                      Height="25"
@@ -219,7 +224,7 @@
 
                         <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center">
                             <Button Name="btLisaa"
-                                    Click="SuljeIkkuna"
+                                    Click="LisaaTulot"
                                     HorizontalAlignment="Center"
                                     Content="Lisää"
                                     FontSize="13"

@@ -20,6 +20,8 @@ namespace Budjetti
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Tulot t = new Tulot();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -34,7 +36,10 @@ namespace Budjetti
 
             dgMenot.ItemsSource = menot;
 
+            AlustaTulot();
         }
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         public class Meno
         {
@@ -45,12 +50,20 @@ namespace Budjetti
             public double Summa { get; set; }
         }
 
+        /*
+        public class Tulo
+        {
+            public int Id { get; set; }
+
+            public double Summa { get; set; }
+        }*/
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
         public void SuljeKokoOhjelma(object sender, RoutedEventArgs e)
         {
             System.Windows.Application.Current.Shutdown();
         }
-
-        
 
         public void MinimoiIkkuna(object sender, RoutedEventArgs e)
         {
@@ -63,7 +76,7 @@ namespace Budjetti
             a.Show();
         }
 
-        private void LisaaTulo(object sender, RoutedEventArgs e)
+        private void MuokkaaTuloja(object sender, RoutedEventArgs e)
         {
             TuloIkkuna a = new TuloIkkuna();
             a.Show();
@@ -73,5 +86,31 @@ namespace Budjetti
         {
             
         }
-    }
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        public void AlustaTulot()
+        {
+            string euro = " €";
+
+            Label[] tulotLb = { asumistukiLb, opintotukiLb, opintolainaLb, palkkaLb, muutLb, tulotYht };
+
+            Tulo[] tt = t.GetTulot();
+
+            for (int i = 0; i < t.Pituus(); i++)
+            {
+                tulotLb[i].Content = tt[i].GetSumma() + euro;
+            }
+
+            double yht = 0;
+
+            foreach (Tulo element in tt)
+            {
+                yht += element.GetSumma();
+            }
+
+            tulotLb[5].Content = yht + euro;
+        }
+
+    }    
 }

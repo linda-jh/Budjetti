@@ -59,9 +59,11 @@
     <Compile Include="TallennusIkkuna.xaml.cs">
       <DependentUpon>TallennusIkkuna.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tulo.cs" />
     <Compile Include="TuloIkkuna.xaml.cs">
       <DependentUpon>TuloIkkuna.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tulot.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
